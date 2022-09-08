@@ -1,5 +1,5 @@
 Kenneth Choi (kchoi21)
 
-No speciaal instructions when running my program. 
-
-Note: I used a late pass to turn in the assignment, but I emailed you about the situation.
+The goal of this assignment was to create a guessing game that would allow the program to guess the animal that the user was thinking of. 
+The program will ask the user if their initial guess was correct and if it was incorrect, it will ask the user what the answer was and ask for 
+a distinguishing detail between the answer and the previous guess. This way the program 'learns' from the incorrect answers. 
