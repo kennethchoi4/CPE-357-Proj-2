@@ -1,0 +1,69 @@
+Kenneth Choi (kchoi21)
+
+1.  Program Requirements  
+
+    For assignment 2, our program is required to predict what the user is thinking about based on a given topic and the 
+    users responses. The program will learn from the users responses by utilizing the incorrect answers and asking for 
+    more clarifying questions in order to approach the correct answer. The program is required to read all the questions 
+    and corresponding responses from a database, construct a decision tree for the program to predict the answer,
+    and rewrite to the database in order to run the game again. Rewriting to the database will allow the program to learn
+    continue apporaching the write answer as the new questions and answers will be read from the database the next time the 
+    program is run. 
+
+2.  Datastructure Definitions
+
+    The datatype that will be used for assignment two is a Node struct. The Node struct is how we will be able to create the 
+    decision tree for the program. Each node will hold data which will either be an question or an answer to a question and 
+    point to two other nodes. If the data within the node is a question, the leaf nodes are going to be other nodes with either 
+    questions or answers. If the data within the node is an answer, then the two leaf nodes are going to be null as the program 
+    shouldn't go any further than the answer. 
+
+    struct node {
+        char *data;          /* either the question or answer */
+        struct node *left;  /* left child */
+        structu node *right /* right child */ 
+    }
+
+3.  Function Prototypes
+    For this assignment I will be using the following prototypes:
+
+    node createtree() 
+        This prototype creates the Binary tree for the guessing game. This will return the head node in order to run the game. 
+
+    void addNode()
+	This will take the user input question and answer and add it to the tree. 
+
+     int checkvalid()
+	This prototype will check if the Binary tree is valid. This means that there are no ‘answer’ nodes with non null leaf nodes and no ‘question’ nodes that have a null leaf node. 
+
+    char getline()
+	The get line prototype will be used to form a string that holds the line of characters in the database file. This will be helpful when assigning the string to the Node as one object. 
+
+4.  Pseudocode for Each Section
+	createtree()
+    - Utilize the first line to create the root node of the tree
+    - Recursively add left nodes until there are no longer left nodes then add right nodes
+	
+	addNode()
+    - Take user input question and user input answer 
+    - Use the question and leaf answers to create new node
+    - Add new node using the current Node in the process of the program 
+
+	checkvalid()
+    - Traverse through the tree 
+    - Ensure that the 
+	
+	char getline()
+    - Create an array of chars to create the line string
+
+5.  Pseudocode for Main
+    - Traverse through the tree corresponding to the answers input by the user
+    - The left node is the no and the right is yes
+    - Rewrite the tree to the database for further program running
+	
+
+6.  Test Strategy & Edge Cases
+    - Rerun the program, assessing what the predicted answer is and what the actual answer is
+    - Corrupt files
+        - Two lines are deleted
+        - One line is deleted
